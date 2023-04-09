@@ -1,0 +1,108 @@
+﻿<UserControl x:Class="NewLeagueOfLegendsClient.View.UserControls.SideLeftBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:NewLeagueOfLegendsClient.View.UserControls"
+             mc:Ignorable="d" Background="Transparent" Opacity="0.8" Height="400">
+    <Grid Background="Transparent" Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button Style="{StaticResource windowButton}" Width="50" Height="50">
+                    <Button.Background>
+                        <VisualBrush>
+                            <VisualBrush.Visual>
+                                <Image Source="/View/Images/money.png" RenderOptions.BitmapScalingMode="Fant"/>
+                            </VisualBrush.Visual>
+                        </VisualBrush>
+                    </Button.Background>
+                </Button>
+            </StackPanel>
+            <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button Style="{StaticResource windowButton}" Width="40" Height="40">
+                    <Button.Background>
+                        <VisualBrush>
+                            <VisualBrush.Visual>
+                                <Image Source="/View/Images/bag.png" RenderOptions.BitmapScalingMode="Fant"/>
+                            </VisualBrush.Visual>
+                        </VisualBrush>
+                    </Button.Background>
+                </Button>
+            </StackPanel>
+            <StackPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button Style="{StaticResource windowButton}" Width="40" Height="40">
+                    <Button.Background>
+                        <VisualBrush>
+                            <VisualBrush.Visual>
+                                <Image Source="/View/Images/book.png" RenderOptions.BitmapScalingMode="Fant"/>
+                            </VisualBrush.Visual>
+                        </VisualBrush>
+                    </Button.Background>
+                </Button>
+            </StackPanel>
+            <StackPanel Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button Style="{StaticResource windowButton}" Width="40" Height="40">
+                    <Button.Background>
+                        <VisualBrush>
+                            <VisualBrush.Visual>
+                                <Image Source="/View/Images/medal.png" RenderOptions.BitmapScalingMode="Fant"/>
+                            </VisualBrush.Visual>
+                        </VisualBrush>
+                    </Button.Background>
+                </Button>
+            </StackPanel>
+            <StackPanel Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button Style="{StaticResource windowButton}" Width="40" Height="40">
+                    <Button.Background>
+                        <VisualBrush>
+                            <VisualBrush.Visual>
+                                <Image Source="/View/Images/sword.png" RenderOptions.BitmapScalingMode="Fant"/>
+                            </VisualBrush.Visual>
+                        </VisualBrush>
+                    </Button.Background>
+                </Button>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Column="1" Margin="10">
+            <Canvas Width="auto" Height="auto">
+                <Canvas.Background>
+                    <RadialGradientBrush GradientOrigin="0.5,0.5" Center="0.5,0.5" RadiusX="0.5" RadiusY="0.5">
+                        <GradientStop Offset="0" Color="#C89B3C" />
+                        <GradientStop Offset="1" Color="#C89B3C" />
+                    </RadialGradientBrush>
+                </Canvas.Background>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Line X1="0" Y1="0" X2="0" Y2="380" Stroke="#C89B3C" StrokeThickness="1" Grid.Column="1">
+                        <Line.Triggers>
+                            <EventTrigger RoutedEvent="Loaded">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <!--
+                                    <DoubleAnimation Storyboard.TargetProperty="StrokeThickness" From="0" To="0.5" Duration="0:0:0.5" AutoReverse="True" RepeatBehavior="Forever"/>
+                                    -->
+                                        <ColorAnimation Storyboard.TargetProperty="Stroke.Color" From="#C8AA6E" To="#C89B3C" Duration="0:0:5" AutoReverse="True" RepeatBehavior="Forever" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Line.Triggers>
+                    </Line>
+                </Grid>
+            </Canvas>
+        </Grid>
+    </Grid>
+</UserControl>
